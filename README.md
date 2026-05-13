@@ -49,7 +49,7 @@ cd ~/Documents/Arduino/libraries
 git clone https://github.com/yourname/AY8912_ESP32.git
 Or download as ZIP and add via Sketch → Include Library → Add .ZIP Library...
 
-3. Examples
+### 3. Examples
 Basic Notes (no external files)
  
 #include <AY8912_ESP32.h>
@@ -72,15 +72,15 @@ void loop() {
   // send to I2S...
 }
 
-Register Dump Player
+### Register Dump Player
 See examples/Player/Player.ino — requires track.h with ay_track[] array.
 
-PT3 Player
+### PT3 Player
 See examples/PT3_Player/PT3_Player.ino — requires converted PT3 file:
  
 xxd -i music.pt3 > music_pt3.h
 
-API Reference
+### API Reference
 AY8912 Class
 | Method                         | Description                              |
 | ------------------------------ | ---------------------------------------- |
@@ -92,7 +92,7 @@ AY8912 Class
 | `setMixerBit(bit, value)`      | Direct mixer control                     |
 | `process(L, R)`                | Generate one stereo sample               |
 
-Convenient Methods
+### Convenient Methods
 | Method                       | Description          |
 | ---------------------------- | -------------------- |
 | `setNote(ch, midiNote)`      | MIDI note 0..127     |
@@ -104,7 +104,7 @@ Convenient Methods
 | `setEnvelopeShape(shape)`    | Envelope shape 0..15 |
 | `enableEnvelope(ch, enable)` | Toggle envelope      |
 
-PT3Player Class
+### PT3Player Class
 | Method                              | Description              |
 | ----------------------------------- | ------------------------ |
 | `load(data, size)`                  | Load PT3 from byte array |
@@ -113,10 +113,10 @@ PT3Player Class
 | `tick()`                            | Call at 50 Hz            |
 | `getTitle()` / `getAuthor()`        | Module info              |
 
-How It Works
+### How It Works
 The original ayumi library by true-grue is mathematically perfect, but uses double (64-bit).
 ESP32-S3 has no hardware FPU for double, causing I2S underruns and crackling.
 AY8912_ESP32 re-implements the exact same logic in float (32-bit).
 The ESP32-S3 hardware FPU handles float natively, leaving CPU headroom for your app.
 License
-MIT License. 
+### MIT License. 
