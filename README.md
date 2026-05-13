@@ -48,6 +48,7 @@ Clone into your Arduino libraries folder:
 cd ~/Documents/Arduino/libraries
 git clone https://github.com/yourname/AY8912_ESP32.git
 Or download as ZIP and add via Sketch → Include Library → Add .ZIP Library...
+
 3. Examples
 Basic Notes (no external files)
  
@@ -70,6 +71,7 @@ void loop() {
   ay.process(L, R);
   // send to I2S...
 }
+
 Register Dump Player
 See examples/Player/Player.ino — requires track.h with ay_track[] array.
 
